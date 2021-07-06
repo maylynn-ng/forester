@@ -1,0 +1,11 @@
+{
+  "name": "forester",
+  "version": "1.0.0",
+  "description": "smart contract practise",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "maylynn",
+  "license": "ISC"
+}
