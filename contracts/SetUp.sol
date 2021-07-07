@@ -24,17 +24,20 @@ contract SetUp is Ownable {
     uint level;
     uint acreCount;
     uint discoverCooldown;
+    uint waterCooldown;
   }
 
   struct Acre {
     uint treeCount;
+    uint lastWatered;
   }
 
   struct Tree {
-    uint dna;
+    string kind;
     string species;
     string name;
     uint age;
+    uint powerCooldown;
     uint spliceCount;
     uint spliceCooldown;
   }
@@ -48,12 +51,5 @@ contract SetUp is Ownable {
 
   // events
   event NewForester (string _name, string _familyName);
-
-  // constructor functions
-  function _createForester(string memory _name, string memory _familyName) internal {
-    uint id = foresters.push(Forester(_name, _familyName, 1, 1, 1 days) + 1;
-    foresterToUser[id] = msg.sender;
-    emit NewForester(_name, _familyName);
-  }
-
+  event NewAcre(string _foresterName);
 }
